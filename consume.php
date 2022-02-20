@@ -61,7 +61,9 @@ function maxValue($array, $keyToSearch)
     }
 }
 
-insertarlog();
+$con=new Conexion();
+$con->conectar();
+//insertarlog();
 
 maxValue($paises, "densidad");
 
