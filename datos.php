@@ -41,6 +41,7 @@ class Datos{
             $a++;
         }
         echo json_encode($paisesd);
+        return json_encode($paisesd);
     }
 
 
@@ -71,67 +72,10 @@ class Datos{
         return $paises;
     }
 
-
-
-
-
-}
-
-/*
-//print_r($datos[1]['translations']['spa']);
-
-
-
-//echo count($datos);
-
-//<count($datos)
-
-
-
-function maxValue($array, $keyToSearch)
-{
-    $a=0;
-    $paisesd=array();
-    while ($a < 5) {
-        $currentMax = NULL;
-    for ($i=0; $i <count($array) ; $i++) {
-
-        
-         foreach($array[$i] as $key => $value)
-        {
-            if ($key == $keyToSearch && ($value >= $currentMax))
-            {
-                $currentMax = $value;
-                $indice=$i;
-            }
-        }
-
-    }
-    array_push($paisesd,$array[$indice]);
-    unset($array[$indice]);
-    $array=array_values($array);
-   // print_r($paisesd);
-    $a++;
+    function suma($val1,$val2){
+        return $val1+$val2;
 
     }
 }
-
-$con=new Conexion();
-$con->conectar();
-//insertarlog();
-
-maxValue($paises, "densidad");
-
-function insertarlog(){
-    $conexion=conectar();
-$sql = "INSERT INTO bitacora (descripcion) VALUES ('prueba2')";
-if (mysqli_query($conexion, $sql)) {
-      echo "New record created successfully";
-} else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
-}
-mysqli_close($conexion);
-
-}*/
 
 ?>
