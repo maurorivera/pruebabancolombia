@@ -6,10 +6,8 @@ class Datos{
     function insertarlog(){
         $ip_add = $_SERVER['HTTP_USER_AGENT'];
         $user_agent = $_SERVER['HTTP_USER_AGENT'];
-        //echo $user_agent;
         $con=new Conexion();
         $conec=$con->conectar();
-       // $conexion=conectar();
         $sql = "INSERT INTO bitacorab(ip,navegador) VALUES ('$ip_add','$user_agent')";
         if (mysqli_query($conec, $sql)) {
            // echo "New record created successfully";
@@ -40,7 +38,6 @@ class Datos{
             $array=array_values($array);
             $a++;
         }
-        echo json_encode($paisesd);
         return json_encode($paisesd);
     }
 
@@ -56,10 +53,6 @@ class Datos{
             if($area!=0){
                 $densidad=$poblacion/$area;
             }
-            /*echo "pais: ".$nombre."<br>";
-            echo "area: ".$area."<br>";
-            echo "poblacion: ".$poblacion."<br>";
-            echo "densidad demografica: ".$densidad."<br>";*/
             $pais=array(
                 'nombre'=>$nombre,
                 'poblacion'=>$poblacion,
@@ -72,10 +65,6 @@ class Datos{
         return $paises;
     }
 
-    function suma($val1,$val2){
-        return $val1+$val2;
-
-    }
 }
 
 ?>
